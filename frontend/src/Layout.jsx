@@ -7,7 +7,7 @@ export const Layout = () => {
   return (
     <div className='text-deep-burgundy bg-bubblegum-pink min-h-screen font-sans'>
       <Header />
-      <main className="flex-grow px-10 py-7 max-w-[1000px] mx-auto">
+      <main className=" max-w-[1000px]">
         <Outlet/>
       </main>
     </div>

@@ -33,8 +33,8 @@ export const Header = () => {
   const username = userInfo?.username;
 
   return (
-    <header className='flex justify-between items-center px-6 py-4 bg-soft-white'>
-      <Link to="/" className='logo font-bold text-2xl text-chery-red'>MyBlog</Link>
+    <header className='flex justify-between items-center px-6 py-4 bg-soft-white '>
+      <Link to="/" className='logo text-2xl font-light text-chery-red'>BLOGOMANIA</Link>
       <nav className='flex space-x-4 text-lg'>
         {username ? (
           <>
