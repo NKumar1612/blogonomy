@@ -14,9 +14,13 @@ export const IndexPage = () => {
     });
   }, []);
   return (
-    <div className="" >
+    <div>
       <HeroPage/>
+        <h1 className=" text-3xl font-light text-left py-6 px-5">
+          Trending Blogs right now:
+        </h1>
       <div className="py-6 flex flex-col items-center h-auto">
+        
         <div className=" w-[700px] space-y-6">
           {posts.length > 0 && posts.map(post => (
             <Post key={post._id} {...post}/>

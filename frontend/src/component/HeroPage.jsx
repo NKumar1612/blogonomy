@@ -8,8 +8,8 @@ HeroPage = () => {
         <h1 className='text-8xl font-extrabold'>
           WELCOME TO
         </h1>
-        <h1 className=' text-8xl font-thin shadow'>
-          BLOGOMANIA
+        <h1 className=' text-8xl font-thin'>
+          BLOGONOMY
         </h1>
         <h1 className='text-base text-opacity-75'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
