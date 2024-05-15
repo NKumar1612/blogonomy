@@ -26,7 +26,7 @@ export const PostPage = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 ">
-            <h1 className="text-4xl font-bold mb-4">{postInfo.title}</h1>
+            <h1 className=" text-6xl mb-4 font-playfair italic">{postInfo.title}</h1>
             <div className="flex items-center text-sm text-gray-600 mb-4">
                 <span className="mr-2">
                     {formatISO9075(new Date(postInfo.createdAt))}

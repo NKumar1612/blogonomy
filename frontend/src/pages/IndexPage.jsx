@@ -16,7 +16,7 @@ export const IndexPage = () => {
   return (
     <div>
       <HeroPage/>
-        <h1 className=" text-3xl font-light text-left py-6 px-5">
+        <h1 className=" text-3xl font-light font-barlow text-left py-6 px-5">
           Trending Blogs right now:
         </h1>
       <div className="py-6 flex flex-col items-center h-auto">

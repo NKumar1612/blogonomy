@@ -26,12 +26,15 @@ export default {
       'dark-olive-green':'#556B2F',
     },
 
-    fontFamily: {
-      sans: ['Lato', 'sans-serif'],
-    },
     
     extend: {
-      
+
+      fontFamily: {
+      'lato': ['Lato', 'sans-serif'],
+      'playfair': ['Playfair Display', 'serif'],
+      'barlow': ['Barlow Condensed','sans-serif']
+    },
+
     },
   },
   plugins: [
