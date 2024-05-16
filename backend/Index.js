@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express      = require('express');
 const cors         = require('cors');
 const mongoose     = require('mongoose');
@@ -9,18 +10,21 @@ const cookieParser = require('cookie-parser');
 const multer       = require('multer');
 const fs           = require('fs');
 
+
 const uploadMiddleware = multer({ dest: 'uploads/' })
 const salt = bcrypt.genSaltSync(10);
 const secret = 'jsgakjsdahs';
 
 const app = express();
 
+const MONGOURI = process.env.MONGO_URI;
+
 app.use(cors({credentials:true, origin:'http://localhost:5173'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'))
 
-mongoose.connect('mongodb+srv://nkumar07nk:UTFOZOC5NbnUufom@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
+mongoose.connect(MONGOURI);
 
 app.post('/register', async (req, res) => {
     const {username,password} = req.body;
