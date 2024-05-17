@@ -12,7 +12,7 @@ export const PostPage = () => {
     const url = window.location.href;
 
     useEffect(() => {
-        fetch(`http://localhost:4000/post/${id.id}`)
+        fetch(`https://blogonomy.onrender.com/post/${id.id}`)
             .then(response => response.json())
             .then(postInfo => {
                 setPostInfo(postInfo);
