@@ -27,6 +27,15 @@ export const PostPage = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 ">
             <h1 className=" text-6xl mb-4 font-playfair italic">{postInfo.title}</h1>
+            
+            <SocialsShare url={url} />
+
+            <img
+                src={`https://blogonomy.onrender.com/${postInfo.cover}`}
+                alt={postInfo.title}
+                className="mb-4"
+            />
+
             <div className="flex items-center text-sm text-gray-600 mb-4">
                 <span className="mr-2">
                     {formatISO9075(new Date(postInfo.createdAt))}
@@ -42,13 +51,7 @@ export const PostPage = () => {
                 )}
             </div>
 
-            <SocialsShare url={url} />
 
-            <img
-                src={`http://localhost:4000/${postInfo.cover}`}
-                alt={postInfo.title}
-                className="mb-4"
-            />
             <div
                 className="prose max-w-none text-base text-deep-burgundy"
                 dangerouslySetInnerHTML={{ __html: postInfo.content }}
