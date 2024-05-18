@@ -23,7 +23,7 @@ app.use('/uploads', express.static(__dirname+'/uploads'))
 
 mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
-const allowedOrigins = ['https://blogonomy.onrender.com', 'blogonomy.social'];
+const allowedOrigins = ['https://blogonomy.onrender.com', 'https://blogonomy.social/'];
 
 app.use(cors({
   origin: function(origin, callback) {
