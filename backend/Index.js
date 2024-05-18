@@ -43,10 +43,11 @@ app.use(cors({
 // Handle preflight requests
 app.options('*', cors());
 
+// Middleware to set headers
 app.use((req, res, next) => {
-    res.header('Access-Control-Max-Age', '86400'); // 24 hours
-    next();
-  });
+  res.header('Access-Control-Max-Age', '86400'); // 24 hours
+  next();
+});
 
 
 app.post('/register', async (req, res) => {
@@ -181,4 +182,10 @@ app.get('/post/:id', async (req, res) => {
     res.json(postDoc);
 })
 
-app.listen(4000);
+app.use((err, req, res, next) => {
+    if (err.message === 'The CORS policy for this site does not allow access from the specified Origin.') {
+      res.status(403).send({ message: err.message });
+    } else {
+      next(err);
+    }
+  });
