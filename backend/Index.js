@@ -23,6 +23,21 @@ app.use('/uploads', express.static(__dirname+'/uploads'))
 
 mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
+const allowedOrigins = ['https://blogonomy.onrender.com', 'https://blogonomy-1.onrender.com'];
+app.use(cors({
+  origin: function(origin, callback){
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    if (allowedOrigins.includes(origin)) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
+
+}));
 
 app.post('/register', async (req, res) => {
     const {username,password} = req.body;
