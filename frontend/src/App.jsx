@@ -12,6 +12,7 @@ import { EditPost } from './pages/EditPost';
 
 function App() {
   return (
+    // routes
     <UserContextProvider>
       <Routes>
         <Route path='/' element={<Layout />}>
