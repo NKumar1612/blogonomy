@@ -34,17 +34,8 @@ const allowedOrigins = [
   ];
   
  // CORS configuration
-const corsOptions = {
-    origin: function(origin, callback) {
-      if (!origin) return callback(null, true);
-  
-      if (allowedOrigins.includes(origin) || /https:\/\/.*\.blogonomy\.social$/.test(origin)) {
-        return callback(null, true);
-      } else {
-        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-        return callback(new Error(msg), false);
-      }
-    },
+ const corsOptions = {
+    origin: '*', // Allow all origins (for testing purposes only)
     credentials: true // Allow cookies to be sent from frontend to backend
   };
   
