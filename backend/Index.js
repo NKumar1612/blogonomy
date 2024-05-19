@@ -33,12 +33,10 @@ const allowedOrigins = [
     'https://www.blogonomy.social/'
   ];
   
- // CORS configuration
- const corsOptions = {
-    origin: '*', // Allow all origins (for testing purposes only)
+  const corsOptions = {
+    origin: 'https://blogonomy.social',
     credentials: true // Allow cookies to be sent from frontend to backend
   };
-  
   app.use(cors(corsOptions));
   
   // Middleware
