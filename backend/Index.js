@@ -190,9 +190,4 @@ app.get('/post/:id', async (req, res) => {
     res.json(postDoc);
 })
 
-
-const PORT = 443; // Render.com usually uses port 443 for HTTPS
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(10000);
