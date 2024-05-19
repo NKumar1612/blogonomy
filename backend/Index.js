@@ -23,25 +23,33 @@ app.use('/uploads', express.static(__dirname+'/uploads'))
 
 mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
-const allowedOrigins = ['https://blogonomy.onrender.com', 'https://blogonomy.social/'];
-
-app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin, like mobile apps or curl requests
-    if (!origin) return callback(null, true);
-
-    // Check if the origin is in the allowed list
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(msg), false);
+const allowedOrigins = [
+    'https://blogonomy.onrender.com',
+    'https://blogonomy-1.onrender.com/', 
+    'https://blogonomy.social',
+    'https://www.blogonomy.onrender.com',
+    'https://www.blogonomy-1.onrender.com/', 
+    'https://www.blogonomy.social/'
+  ];
+  
+  app.use(cors({
+    origin: function(origin, callback) {
+      // Allow requests with no origin, like mobile apps or curl requests
+      if (!origin) return callback(null, true);
+  
+      // Check if the origin is in the allowed list or matches a pattern
+      if (allowedOrigins.includes(origin) || /https:\/\/.*\.blogonomy\.social$/.test(origin)) {
+        return callback(null, true);
+      } else {
+        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }
     }
-  }
-}));
-
-// Handle preflight requests
-app.options('*', cors());
+  }));
+  
+  // Handle preflight requests
+  app.options('*', cors());
+  
 
 // Middleware to set headers
 app.use((req, res, next) => {
@@ -182,10 +190,3 @@ app.get('/post/:id', async (req, res) => {
     res.json(postDoc);
 })
 
-app.use((err, req, res, next) => {
-    if (err.message === 'The CORS policy for this site does not allow access from the specified Origin.') {
-      res.status(403).send({ message: err.message });
-    } else {
-      next(err);
-    }
-  });
