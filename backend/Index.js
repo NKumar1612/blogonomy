@@ -33,7 +33,8 @@ const allowedOrigins = [
     'https://www.blogonomy.social/'
   ];
   
-  const corsOptions = {
+ // CORS configuration
+const corsOptions = {
     origin: function(origin, callback) {
       if (!origin) return callback(null, true);
   
@@ -53,6 +54,7 @@ const allowedOrigins = [
   app.use(express.json());
   app.use(cookieParser());
   app.use('/uploads', express.static(__dirname + '/uploads'));
+  
 
 
 app.post('/register', async (req, res) => {
