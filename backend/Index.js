@@ -23,6 +23,7 @@ app.use('/uploads', express.static(__dirname+'/uploads'))
 
 mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
+// CORS configuration
 const allowedOrigins = [
     'https://blogonomy.onrender.com',
     'https://blogonomy-1.onrender.com/', 
@@ -32,30 +33,26 @@ const allowedOrigins = [
     'https://www.blogonomy.social/'
   ];
   
-  app.use(cors({
+  const corsOptions = {
     origin: function(origin, callback) {
-      // Allow requests with no origin, like mobile apps or curl requests
       if (!origin) return callback(null, true);
   
-      // Check if the origin is in the allowed list or matches a pattern
       if (allowedOrigins.includes(origin) || /https:\/\/.*\.blogonomy\.social$/.test(origin)) {
         return callback(null, true);
       } else {
         const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
         return callback(new Error(msg), false);
       }
-    }
-  }));
+    },
+    credentials: true // Allow cookies to be sent from frontend to backend
+  };
   
-  // Handle preflight requests
-  app.options('*', cors());
+  app.use(cors(corsOptions));
   
-
-// Middleware to set headers
-app.use((req, res, next) => {
-  res.header('Access-Control-Max-Age', '86400'); // 24 hours
-  next();
-});
+  // Middleware
+  app.use(express.json());
+  app.use(cookieParser());
+  app.use('/uploads', express.static(__dirname + '/uploads'));
 
 
 app.post('/register', async (req, res) => {
