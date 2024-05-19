@@ -62,6 +62,10 @@ app.post('/register', async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
+
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', 'https://blogonomy.social');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
     const {username,password} = req.body;
     const userDoc = await User.findOne({username});
     const passOk = bcrypt.compareSync(password, userDoc.password);
@@ -82,6 +86,10 @@ app.post('/login', async (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
+
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', 'https://blogonomy.social');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
     const { token } = req.cookies;
     if (!token) {
         return res.status(401).json({ error: 'JWT must be provided' });
