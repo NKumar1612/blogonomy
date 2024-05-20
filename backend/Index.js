@@ -31,7 +31,6 @@ app.use(cors({
         'https://blogonomy.social',
         'https://blogonomy.onrender.com',
         'https://blogonomy-1.onrender.com',
-        'https://blogonomy.onrender.com/login'
     ],
 }));
 
@@ -58,9 +57,6 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
 
-    // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://blogonomy.social');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
     const {username,password} = req.body;
     const userDoc = await User.findOne({username});
     const passOk = bcrypt.compareSync(password, userDoc.password);
