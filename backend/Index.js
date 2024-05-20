@@ -74,17 +74,19 @@ app.post('/login', async (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
-    const token = req.cookies.token; // Get token from cookies
+    const token = req.cookies.token; 
+
     if (!token) {
-        return res.status(401).json({ error: 'JWT must be provided' });
+        // Handle the case when there's no token (e.g., first load or not logged in)
+        return res.json({ isLoggedIn: false }); // Or another suitable response
     }
 
     jwt.verify(token, secret, {}, (err, info) => {
         if (err) {
             console.error('JWT verification failed:', err);
-            return res.status(401).json({ error: 'Invalid JWT' });
+            return res.status(401).json({ error: 'Invalid JWT', isLoggedIn: false });
         }
-        res.json(info);
+        res.json({ ...info, isLoggedIn: true });
     });
 });
 
