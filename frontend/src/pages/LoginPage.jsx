@@ -38,7 +38,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <form onSubmit={login} className='flex flex-col gap-y-6 h-full p-4'>
+    <form onSubmit={login} className='flex flex-col items-center gap-y-6 h-full p-4'>
       <h1 className='text-3xl font-bold py-5'>Login Form</h1>
 
       <input 
