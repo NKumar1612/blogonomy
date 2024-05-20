@@ -16,14 +16,6 @@ const secret = 'jsgakjsdahs';
 
 const app = express();
 
-app.use(cors({credentials:true, origin:'http://localhost:5173'}));
-app.use(express.json());
-app.use(cookieParser());
-app.use('/uploads', express.static(__dirname+'/uploads'))
-
-mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
-
-
 // Updated CORS Configuration
 app.use(cors({
     credentials: true,
@@ -40,6 +32,8 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
+
+mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
 
 app.post('/register', async (req, res) => {
