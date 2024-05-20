@@ -23,27 +23,15 @@ app.use('/uploads', express.static(__dirname+'/uploads'))
 
 mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
-// CORS configuration
-const allowedOrigins = [
-    'https://blogonomy.onrender.com',
-    'https://blogonomy-1.onrender.com/', 
-    'https://blogonomy.social',
-    'https://www.blogonomy.onrender.com',
-    'https://www.blogonomy-1.onrender.com/', 
-    'https://www.blogonomy.social/'
-  ];
-  
-  const corsOptions = {
-    origin: 'https://blogonomy.social',
-    credentials: true // Allow cookies to be sent from frontend to backend
-  };
-  app.use(cors(corsOptions));
-  
-  // Middleware
-  app.use(express.json());
-  app.use(cookieParser());
-  app.use('/uploads', express.static(__dirname + '/uploads'));
-  
+app.use(cors({
+    credentials: true,
+    origin: ['http://localhost:5173', 'https://blogonomy.social', 
+             'https://blogonomy.onrender.com', 'https://blogonomy-1.onrender.com']
+}));
+
+app.use(express.json());
+app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 
 app.post('/register', async (req, res) => {
@@ -86,11 +74,7 @@ app.post('/login', async (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
-
-    // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://blogonomy.social');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    const { token } = req.cookies;
+    const token = req.cookies.token; // Get token from cookies
     if (!token) {
         return res.status(401).json({ error: 'JWT must be provided' });
     }
