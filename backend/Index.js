@@ -23,10 +23,12 @@ app.use('/uploads', express.static(__dirname+'/uploads'))
 
 mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy');
 
+
+// Updated CORS Configuration
 app.use(cors({
     credentials: true,
     origin: ['http://localhost:5173', 'https://blogonomy.social', 
-             'https://blogonomy.onrender.com', 'https://blogonomy-1.onrender.com']
+             'https://blogonomy.onrender.com', 'https://blogonomy-1.onrender.com']  // Add your other allowed origins here
 }));
 
 app.use(express.json());
