@@ -27,9 +27,13 @@ mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mo
 // Updated CORS Configuration
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:5173', 'https://blogonomy.social', 
-             'https://blogonomy.onrender.com', 'https://blogonomy-1.onrender.com']  // Add your other allowed origins here
+    origin: [
+        'https://blogonomy.social',
+        'https://blogonomy.onrender.com',
+        'https://blogonomy-1.onrender.com',
+    ],
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
