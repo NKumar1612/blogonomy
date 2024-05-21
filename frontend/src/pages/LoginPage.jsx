@@ -38,28 +38,51 @@ export const LoginPage = () => {
   }
 
   return (
-    <form onSubmit={login} className='flex flex-col items-center gap-y-6 h-full p-4'>
-      <h1 className='text-3xl font-bold py-5'>Login Form</h1>
+    <main className="flex flex-col items-center justify-center h-full gap-y-6 p-4">
+      <form
+        onSubmit={login}
+        className="bg-soft-white p-8 rounded-md shadow-md w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-96" // Adjusted width classes
+      >
+        <h1 className="text-3xl font-bold text-deep-burgundy mb-4">Login Form</h1>
 
-      <input 
-          type='text' 
-          placeholder='Username' 
-          value={username} 
-          onChange={ev => setUsername(ev.target.value)} 
-          className='bg-soft-white placeholder-neutral-gray placeholder-red-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent'
-      />
-
-      <input 
-          type='password' 
-          placeholder='Password'
-          value={password} 
-          onChange={ev => setPassword(ev.target.value)}  
-          className='bg-soft-white placeholder-neutral-gray placeholder-red-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent'
-      />
-
-      <div className="flex justify-center py-4">
-          <button className='bg-coral text-soft-white p-2 rounded-md w-28 hover:bg-coral-light transition-colors duration-300'>Login</button>
+      <div className="flex flex-col w-full">
+        <label htmlFor="username" className="text-sm text-neutral-gray mb-1"> 
+          {/* Reduced margin bottom */}
+          Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          value={username}
+          onChange={(ev) => setUsername(ev.target.value)}
+          className="bg-soft-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent text-sm" // Added text-sm
+        />
       </div>
-  </form>
+
+      <div className="flex flex-col w-full">
+        <label htmlFor="password" className="text-sm text-neutral-gray mb-1">
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          value={password}
+          onChange={(ev) => setPassword(ev.target.value)}
+          className="bg-soft-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent text-sm"
+        />
+      </div>
+
+      <div className="flex justify-center py-2"> {/* Reduced top padding */}
+        <button
+          type="submit"
+          className="bg-coral text-soft-white p-2 rounded-md w-32 hover:bg-coral-light transition-colors duration-300 text-sm" // Added text-sm
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </main>
   )
 }
