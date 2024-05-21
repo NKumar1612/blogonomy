@@ -13,7 +13,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
         <img className="w-40 h-40 object-cover" src={`https://blogonomy.onrender.com/${cover}`} alt={title} />
         <div className="p-6 flex flex-col justify-start">
           <h2 className="font-semibold text-3xl font-barlow mb-2">{title}</h2>
-          <p className="text-sm text-gray-600 mb-2">{author.username} | {displayedTime} : ''</p>
+          <p className="text-sm text-gray-600 mb-2">{author.username} | {displayedTime} </p>
           <p className="text-sm">{summary}</p>
         </div>
       </div>

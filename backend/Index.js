@@ -23,7 +23,7 @@ app.use(cors({
         
         'https://blogonomy.social',
         'https://blogonomy.onrender.com',
-        'https://blogonomy-1.onrender.com',
+        'https://blogonomy-1.onrender.com'
 
     ],
 }));
