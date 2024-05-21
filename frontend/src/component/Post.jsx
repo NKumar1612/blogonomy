@@ -8,13 +8,28 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
   const displayedTime = `${hours}:${minutes}`;
 
   return (
-    <Link key={_id} to={`/post/${_id}`} className="block rounded-lg overflow-hidden bg-pale-pink hover:shadow-md transition duration-300">
-      <div className="flex items-center">
-        <img className="w-40 h-40 object-cover" src={`https://blogonomy.onrender.com/${cover}`} alt={title} />
-        <div className="p-6 flex flex-col justify-start">
-          <h2 className="font-semibold text-3xl font-barlow mb-2">{title}</h2>
-          <p className="text-sm text-gray-600 mb-2">{author.username} | {displayedTime} </p>
-          <p className="text-sm">{summary}</p>
+    <Link
+      key={_id}
+      to={`/post/${_id}`}
+      className="block rounded-lg overflow-hidden bg-soft-white hover:bg-light-lavender transition duration-300"
+    >
+      <div className="flex items-center p-4"> {/* Added padding */}
+        <img
+          className="w-40 h-40 object-cover rounded-lg mr-6" // Added right margin
+          src={`https://blogonomy.onrender.com/${cover}`}
+          alt={title}
+        />
+        <div className="flex-grow flex flex-col justify-between"> {/* Added flex-grow and justify-between */}
+          <h2 className="font-playfair text-2xl md:text-3xl text-deep-burgundy">
+            {title}
+          </h2>
+          <div className="flex items-center justify-between text-sm text-neutral-gray">
+            <span>{author.username} | {displayedTime}</span>
+            <span className="font-barlow">Read More</span> {/* Changed font for Read More */}
+          </div>
+          <p className="text-sm mt-2 line-clamp-3"> {/* Added line-clamp for summary */}
+            {summary}
+          </p>
         </div>
       </div>
     </Link>
