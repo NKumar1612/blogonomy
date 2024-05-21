@@ -41,7 +41,7 @@ export const LoginPage = () => {
     <main className="flex flex-col items-center justify-center h-full gap-y-6 p-4">
       <form
         onSubmit={login}
-        className="bg-soft-white p-8 rounded-md shadow-md w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-96" // Adjusted width classes
+        className="bg-soft-white p-8 rounded-md shadow-md w-full md:w-1/2 lg:w-2/3 xl:w-3/4"  // Adjusted width classes
       >
         <h1 className="text-3xl font-bold text-deep-burgundy mb-4">Login Form</h1>
 
