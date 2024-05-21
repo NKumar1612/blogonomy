@@ -5,7 +5,7 @@ import './global.css'
 
 export const Layout = () => {
   return (
-    <div className="min-h-screen font-lato flex flex-col  bg-bubblegum-pink"> 
+    <div className="min-h-screen font-lato flex flex-col bg-muted-mint-green"> 
       <Header />
       {/* Hero Section (Full Width) */}
       <section className="w-full">
