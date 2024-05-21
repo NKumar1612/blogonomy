@@ -3,18 +3,21 @@ import React from 'react'
 export const 
 HeroPage = () => {
   return (
-    <div className='w-screen h-screen bg-gradient-to-r from-pale-pink to-light-lavender text-chery-red flex items-center px-10'>
-      <div className='py-5 px-5'>
-        <h1 className='text-8xl font-semibold font-playfair'>
+    <section className="w-screen min-h-screen bg-gradient-to-r from-pale-pink to-light-lavender text-chery-red flex flex-col items-center justify-center px-10">
+      <div className="py-10 md:py-20 px-5 text-center">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-playfair">
           WELCOME TO
         </h1>
-        <h1 className=' text-8xl font-thin'>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light mb-6">
           BLOGONOMY
         </h1>
-        <h1 className='text-base text-opacity-75'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-        </h1>
+        <p className="text-lg md:text-xl font-lato text-neutral-gray max-w-3xl mx-auto mb-8">
+          Your curated collection of elegant and minimalist blogs. Discover inspiring stories and insightful perspectives.
+        </p>
+        <button className="bg-dark-olive-green text-soft-white font-barlow py-2 px-6 rounded-md hover:bg-darker-mint-green transition-colors duration-300">
+          Start Exploring
+        </button>
       </div>
-    </div>
+    </section>
   )
 }
