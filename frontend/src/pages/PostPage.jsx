@@ -25,32 +25,33 @@ export const PostPage = () => {
     if(!postInfo) return '';
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8 ">
-            <h1 className=" text-6xl mb-4 font-playfair italic">{postInfo.title}</h1>
-            
+        <div className="max-w-4xl mx-auto px-4 py-8">
+            <h1 className="text-6xl md:text-7xl mb-6 font-playfair italic leading-tight">
+                {postInfo.title}
+            </h1>
+
             <SocialsShare url={url} />
 
             <img
                 src={`https://blogonomy.onrender.com/${postInfo.cover}`}
                 alt={postInfo.title}
-                className="mb-4"
+                className="mb-6 rounded-lg shadow-md w-full" // Added rounded corners, shadow, and width
             />
 
-            <div className="flex items-center text-sm text-gray-600 mb-4">
-                <span className="mr-2">
-                    {formatISO9075(new Date(postInfo.createdAt))}
+            <div className="flex items-center text-base text-gray-600 mb-4 space-x-2">
+                <span>
+                {formatISO9075(new Date(postInfo.createdAt))}
                 </span>
-                <span className="mr-2 text-chery-red">by @{postInfo.author.username}</span>
+                <span className="text-chery-red">by @{postInfo.author.username}</span>
                 {userInfo.id === postInfo.author._id && (
-                    <Link
-                        to={`/edit/${postInfo._id}`}
-                        className="bg-deep-teal p-1 rounded-md text-soft-white text-center w-20 hover:bg-teal"
-                    >
-                        Edit Post
-                    </Link>
+                <Link
+                    to={`/edit/${postInfo._id}`}
+                    className="bg-deep-teal py-2 px-4 rounded-md text-soft-white text-center hover:bg-teal transition-colors duration-300"
+                >
+                    Edit Post
+                </Link>
                 )}
             </div>
-
 
             <div
                 className="prose max-w-none text-base text-deep-burgundy"
