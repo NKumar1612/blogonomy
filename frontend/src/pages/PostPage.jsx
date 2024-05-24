@@ -10,6 +10,7 @@ export const PostPage = () => {
     const {userInfo} = useContext(UserContext);
     const id = useParams();
     const url = window.location.href;
+    const formattedTime = postInfo.createdAt ? formatISO9075(new Date(postInfo.createdAt), { representation: 'time' }).slice(0, -3) : '';
 
     useEffect(() => {
         fetch(`https://blogonomy.onrender.com/post/${id.id}`)
@@ -44,7 +45,7 @@ export const PostPage = () => {
             {/* Metadata (Improved font size and spacing) */}
             <div className="flex items-center text-base text-neutral-gray mb-4 space-x-2">
                 <span>
-                {formatISO9075(new Date(postInfo.createdAt))}
+                {formatISO9075(new Date(formattedTime))}
                 </span>
                 <span className="text-chery-red">by @{postInfo.author.username}</span>
                 {userInfo.id === postInfo.author._id && (
