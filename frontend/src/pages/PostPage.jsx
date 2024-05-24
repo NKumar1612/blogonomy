@@ -26,19 +26,23 @@ export const PostPage = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8">
-            <h1 className="text-6xl md:text-7xl mb-6 font-playfair italic leading-tight">
+            {/* Title (Reduced size, adjusted margins) */}
+            <h1 className="text-5xl md:text-6xl mb-4 font-playfair italic leading-tight text-deep-burgundy">
                 {postInfo.title}
             </h1>
 
+            {/* Social Share */}
             <SocialsShare url={url} />
 
+            {/* Image (Added max-width for responsiveness) */}
             <img
                 src={`https://blogonomy.onrender.com/${postInfo.cover}`}
                 alt={postInfo.title}
-                className="mb-6 rounded-lg shadow-md w-full" // Added rounded corners, shadow, and width
+                className="mb-6 rounded-lg shadow-md max-w-full"
             />
 
-            <div className="flex items-center text-base text-gray-600 mb-4 space-x-2">
+            {/* Metadata (Improved font size and spacing) */}
+            <div className="flex items-center text-base text-neutral-gray mb-4 space-x-2">
                 <span>
                 {formatISO9075(new Date(postInfo.createdAt))}
                 </span>
@@ -53,10 +57,10 @@ export const PostPage = () => {
                 )}
             </div>
 
+            {/* Content (Ensured text color is deep-burgundy) */}
             <div
-                className="prose max-w-none text-base text-deep-burgundy"
+                className="prose max-w-none text-base text-deep-burgundy" 
                 dangerouslySetInnerHTML={{ __html: postInfo.content }}
             />
         </div>
-    )
-}
+)}
