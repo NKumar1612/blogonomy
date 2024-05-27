@@ -17,17 +17,20 @@ export const IndexPage = () => {
     <div>
       <HeroPage />
 
-      <section className="bg-soft-white py-12 md:py-24"> {/* Added background color and padding */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8"> 
-          <h1 className="text-3xl md:text-4xl font-playfair text-deep-burgundy text-center mb-8"> 
+      <section className="bg-light-lavender py-16 md:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-playfair text-deep-burgundy text-center mb-12 shadow-sm">
             Trending Blogs right now:
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.length > 0 && posts.map((post) => (
-              <Post key={post._id} {...post} />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-8">
+            {posts.length > 0 &&
+              posts.map((post) => (
+                <Post key={post._id} {...post} />
+              ))}
           </div>
+
+          {/* Add pagination component here if needed */}
         </div>
       </section>
     </div>
