@@ -15,18 +15,21 @@ export const IndexPage = () => {
   }, []);
   return (
     <div>
-      <HeroPage/>
-        <h1 className=" text-3xl font-light font-barlow text-left py-6 px-5">
-          Trending Blogs right now:
-        </h1>
-      <div className="py-6 flex flex-col items-center h-auto">
-        
-        <div className=" w-[700px] space-y-6">
-          {posts.length > 0 && posts.map(post => (
-            <Post key={post._id} {...post}/>
-          ))}
+      <HeroPage />
+
+      <section className="bg-soft-white py-12 md:py-24"> {/* Added background color and padding */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8"> 
+          <h1 className="text-3xl md:text-4xl font-playfair text-deep-burgundy text-center mb-8"> 
+            Trending Blogs right now:
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.length > 0 && posts.map((post) => (
+              <Post key={post._id} {...post} />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
