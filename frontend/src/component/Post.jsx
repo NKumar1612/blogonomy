@@ -8,27 +8,32 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
   const displayedTime = `${hours}:${minutes}`;
 
   return (
-    <Link
-      key={_id}
+    <Link 
+      key={_id} 
       to={`/post/${_id}`}
-      className="block w-80 h-96 bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300" // Added fixed width and height
+      className="flex flex-col md:flex-row bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-80 md:w-full" // Changed to flex-row for horizontal layout on larger screens, removed fixed width
     >
-      <div className="flex flex-col h-full">  {/* Ensures content fills the entire card */}
-        <img
-          className="object-cover w-full h-48 rounded-t-lg" // Adjusted for fixed height
+      {/* Image Section */}
+      <div className="md:w-1/3"> {/* Adjust width for image on larger screens */}
+        <img 
           src={`https://blogonomy.onrender.com/${cover}`}
           alt={title}
+          className="object-cover h-48 md:h-full w-full rounded-t-lg md:rounded-l-lg" // Adjusted rounded corners for responsiveness
         />
-        <div className="p-4 flex-grow flex flex-col justify-between"> {/* flex-grow and justify-between for better layout */}
-          <h2 className="font-playfair text-2xl md:text-3xl tracking-wide text-deep-burgundy mb-2">
-            {title}
-          </h2>
-          <div className="flex items-center justify-between text-xs text-neutral-gray mb-2">
-            <span>{author.username} | {displayedTime}</span>
-            <span className="font-lato hover:underline text-sm">Read More</span>
-          </div>
-          <p className="text-sm line-clamp-2">{summary}</p>
+      </div>
+
+      {/* Text Content Section */}
+      <div className="p-4 md:p-6 flex flex-col justify-between flex-grow"> 
+        <h2 className="font-playfair text-2xl md:text-3xl tracking-wide text-deep-burgundy mb-2">
+          {title}
+        </h2>
+        <div className="flex items-center justify-between text-xs text-neutral-gray mb-2">
+          <span>{author.username} | {displayedTime}</span>
+          <span className="font-lato hover:underline text-sm">Read More</span> 
         </div>
+        <p className="text-sm line-clamp-3 break-words"> {/* Added break-words to prevent overflow */}
+          {summary}
+        </p>
       </div>
     </Link>
   );
