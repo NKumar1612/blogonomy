@@ -11,7 +11,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
     <Link
       key={_id}
       to={`/post/${_id}`}
-      className="block rounded-lg overflow-hidden bg-soft-white hover:bg-light-lavender transition duration-300"
+      className="block rounded-lg overflow-hidden bg-soft-white hover:bg-light-lavender border-light-lavender transition duration-300"
     >
       <div className="flex items-center p-4"> {/* Added padding */}
         <img
