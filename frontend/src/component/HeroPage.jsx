@@ -7,7 +7,7 @@ HeroPage = () => {
       className="w-screen bg-gradient-to-r from-pale-pink to-light-lavender text-chery-red flex flex-col items-center justify-center px-4 sm:px-10"
     >
       <div className="py-8 md:py-20 px-5 text-center">
-        {/* Adjusted padding for mobile */}
+        
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-playfair leading-tight">
           WELCOME TO
         </h1>
