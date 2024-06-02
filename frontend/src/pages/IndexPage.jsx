@@ -23,14 +23,13 @@ export const IndexPage = () => {
             Trending Blogs right now:
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8">
             {posts.length > 0 &&
               posts.map((post) => (
                 <Post key={post._id} {...post} />
               ))}
           </div>
 
-          {/* Add pagination component here if needed */}
         </div>
       </section>
     </div>
