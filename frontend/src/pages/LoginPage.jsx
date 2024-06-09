@@ -60,7 +60,7 @@ export const LoginPage = () => {
 
         <div className="flex flex-col w-full">
           <label htmlFor="password" className="text-base text-neutral-gray mb-2">
-            Password 
+            password
           </label>
           <input
             type="password"
