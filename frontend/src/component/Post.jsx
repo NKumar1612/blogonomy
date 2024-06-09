@@ -11,20 +11,20 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
     <Link 
       key={_id} 
       to={`/post/${_id}`}
-      className="group flex flex-col md:flex-row md:grid md:grid-cols-12 bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-80 md:w-full"
+      className="group flex flex-col md:flex-row bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-80 md:w-full md:max-w-2xl"
     >
       {/* Image Section */}
-      <div className="relative md:col-span-4 flex-shrink-0 aspect-square md:aspect-auto md:h-auto">
+      <div className="relative flex-shrink-0 w-full md:w-1/3 h-48 md:h-auto">
         <img
           src={`https://blogonomy.onrender.com/${cover}`}
           alt={title}
-          className="object-cover object-center w-full h-full rounded-t-lg md:rounded-l-lg group-hover:scale-105 transition-transform duration-300"
+          className="object-cover object-center w-full h-full rounded-t-lg md:rounded-t-none md:rounded-l-lg group-hover:scale-105 transition-transform duration-300"
         />
       </div>
 
       {/* Text Content Section */}
-      <div className="md:col-span-8 p-4 md:p-6 flex flex-col flex-grow h-full">
-        <div className="flex-grow">
+      <div className="w-full md:w-2/3 p-4 md:p-6 flex flex-col justify-between">
+        <div>
           <h2 className="font-playfair text-xl md:text-2xl lg:text-3xl tracking-wide text-deep-burgundy mb-2 line-clamp-2">
             {title}
           </h2>
