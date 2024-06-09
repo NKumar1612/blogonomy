@@ -11,10 +11,10 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
     <Link 
       key={_id} 
       to={`/post/${_id}`}
-      className="group flex flex-col md:grid md:grid-cols-12 bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-80 md:w-full"
+      className="group flex flex-col md:flex-row md:grid md:grid-cols-12 bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-80 md:w-full"
     >
       {/* Image Section */}
-      <div className="relative md:col-span-4 flex-shrink-0 aspect-square">
+      <div className="relative md:col-span-4 flex-shrink-0 aspect-square md:aspect-auto md:h-auto">
         <img
           src={`https://blogonomy.onrender.com/${cover}`}
           alt={title}
@@ -23,7 +23,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
       </div>
 
       {/* Text Content Section */}
-      <div className="md:col-span-8 p-4 md:p-6 flex flex-col flex-grow">
+      <div className="md:col-span-8 p-4 md:p-6 flex flex-col flex-grow h-full">
         <div className="flex-grow">
           <h2 className="font-playfair text-xl md:text-2xl lg:text-3xl tracking-wide text-deep-burgundy mb-2 line-clamp-2">
             {title}
@@ -42,5 +42,6 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
         </div>
       </div>
     </Link>
+
   );
 };
