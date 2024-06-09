@@ -27,7 +27,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
         <h2 className="font-playfair text-2xl md:text-3xl tracking-wide text-deep-burgundy mb-2">
           {title}
         </h2>
-        <p className="text-neutral-gray text-sm mb-2">{authorAndDate}</p> {/* Combined author and date */}
+        <p className="text-neutral-gray text-sm mb-2">{author.username} | {displayedTime}</p> {/* Combined author and date */}
         <p className="text-sm line-clamp-3 break-words text-neutral-gray">
           {summary}
         </p>
