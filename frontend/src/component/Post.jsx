@@ -14,7 +14,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
       className="group flex flex-col md:grid md:grid-cols-12 bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-80 md:w-full"
     >
       {/* Image Section */}
-      <div className="relative w-full md:col-span-4 flex-shrink-0 h-48 md:h-36 overflow-hidden"> {/* Fixed height */}
+      <div className="relative w-full md:col-span-4 flex-shrink-0 aspect-square"> {/* Added aspect-square for square ratio */}
         <img
           src={`https://blogonomy.onrender.com/${cover}`}
           alt={title}
