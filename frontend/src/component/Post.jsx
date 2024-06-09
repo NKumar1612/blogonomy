@@ -11,7 +11,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
     <Link
       key={_id}
       to={`/post/${_id}`}
-      className="group flex flex-col md:flex-row bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-full md:max-w-3xl h-64 md:h-auto"
+      className="group flex flex-col md:flex-row bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-full sm:max-w-3xl h-64 sm:h-auto"
     >
       {/* Image Section */}
       <div className="relative flex-shrink-0 w-full md:w-48 h-64 md:h-full">
