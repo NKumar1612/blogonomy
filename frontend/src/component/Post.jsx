@@ -42,6 +42,5 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
         </div>
       </div>
     </Link>
-
   );
 };
