@@ -11,10 +11,11 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
     <Link 
       key={_id} 
       to={`/post/${_id}`}
-      className="group flex flex-col sm:flex-row bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-full sm:max-w-3xl h-auto" // Adjusted max-width and height for responsiveness
+      className="group flex bg-soft-white hover:bg-[#F2F0F9] border border-light-lavender rounded-lg overflow-hidden shadow-md transition duration-300 w-full sm:max-w-3xl h-auto" 
     >
       {/* Image Section */}
-      <div className="relative flex-shrink-0 w-full sm:w-1/3">
+      <div className="relative w-full md:w-1/3 flex-shrink-0"> 
+        {/* Image takes full width on mobile, 1/3 on desktop */}
         <img
           src={`https://blogonomy.onrender.com/${cover}`}
           alt={title}
@@ -23,7 +24,7 @@ export const Post = ({ _id, title, summary, cover, createdAt, author }) => {
       </div>
 
       {/* Text Content Section */}
-      <div className="p-4 sm:p-6 flex flex-col justify-between flex-grow">
+      <div className="p-4 md:p-6 flex flex-col justify-between flex-grow">
         <div className="flex-grow">
           <h2 className="font-playfair text-xl sm:text-2xl lg:text-3xl tracking-wide text-deep-burgundy mb-2 line-clamp-2">
             {title}
