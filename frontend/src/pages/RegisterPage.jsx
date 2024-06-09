@@ -22,29 +22,55 @@ export const RegisterPage = () => {
   }
 
   return (
-  <form onSubmit={register} className='grid grid-cols-1 gap-y-6 h-full p-4'>
-      <h1 className='text-3xl font-bold py-5'>Registration Form</h1>
-
-      <input 
-          type='text' 
-          placeholder='Username' 
-          value={username} 
-          onChange={ev => setUsername(ev.target.value)} 
-          className='bg-soft-white placeholder-neutral-gray placeholder-red-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent'
-      />
-
-      <input 
-          type='password' 
-          placeholder='Password'
-          value={password} 
-          onChange={ev => setPassword(ev.target.value)}  
-          className='bg-soft-white placeholder-neutral-gray placeholder-red-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent'
-      />
-
-      <div className="flex justify-center py-4">
-          <button className='bg-coral text-soft-white p-2 rounded-md w-28 hover:bg-coral-light transition-colors duration-300'>Register</button>
-      </div>
-  </form>
+    <main className="flex flex-col items-center justify-center h-full gap-y-6 p-4">
+      <form
+        onSubmit={register}
+        className="bg-soft-white p-10 md:p-12 rounded-md shadow-lg w-full md:w-96 space-y-6"
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-deep-burgundy mb-4 text-center">
+          Registration Form
+        </h1>
+    
+        <div className="flex flex-col w-full">
+          <label htmlFor="username" className="text-base text-neutral-gray mb-2">
+            Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Username"
+            value={username}
+            onChange={(ev) => setUsername(ev.target.value)}
+            className="bg-soft-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+          />
+        </div>
+    
+        <div className="flex flex-col w-full">
+          <label htmlFor="password" className="text-base text-neutral-gray mb-2">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            value={password}
+            onChange={(ev) => setPassword(ev.target.value)}
+            className="bg-soft-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+          />
+        </div>
+    
+        {/* You might want to add more fields here, like email, confirm password, etc. */}
+    
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            className="bg-coral text-soft-white py-2 px-8 rounded-md hover:bg-coral-light transition-colors duration-300 text-base w-full"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </main>
 
   )
 }
