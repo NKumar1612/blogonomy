@@ -33,9 +33,9 @@ export const Header = () => {
   const username = userInfo?.username;
 
   return (
-    <header className='flex justify-between items-center px-6 py-4 bg-soft-white '>
+    <header className='flex justify-between items-center px-6 py-4 bg-soft-white'>
       <Link to="/" className='logo text-2xl font-light text-chery-red'>BLOGONOMY</Link>
-      <nav className='flex space-x-4 text-lg'>
+      <nav className='flex space-x-4 text-lg sm:text-4xl'>
         {username ? (
           <>
             <Link to='/create' className='text-chery-red hover:underline'>Create New Post</Link>
