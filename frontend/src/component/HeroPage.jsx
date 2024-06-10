@@ -7,7 +7,7 @@ HeroPage = () => {
       className="lg:w-screen lg:h-screen sm:min-h-screen bg-gradient-to-r from-pale-pink to-light-lavender text-chery-red flex flex-col items-center justify-center px-4 sm:px-10"
     >
       <div className="flex flex-col max-w-md mx-auto lg:py-8 sm:py-20 text-center text-wrap">
-        <h1 className="sm:text78xl lg:text-7xl font-bold font-playfair mb-2">
+        <h1 className="sm:text7xl lg:text-7xl font-bold font-playfair mb-2">
           WELCOME TO
         </h1>
         <h1 className="sm:text-7xl lg:text-7xl font-light lg:mb-4 sm:mb-8">
