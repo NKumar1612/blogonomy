@@ -16,9 +16,9 @@ HeroPage = () => {
         <p className="lg:text-sm sm:text-lg font-lato text-neutral-gray lg:mb-4 sm:mb-8">
           Your curated collection of elegant and minimalist blogs. Discover inspiring stories and insightful perspectives.
         </p>
-        <button className="bg-dark-olive-green text-soft-white font-barlow py-2 px-6 rounded-md hover:bg-darker-mint-green transition-colors duration-300 w-full sm:w-auto">
+        {/* <button className="bg-dark-olive-green text-soft-white font-barlow py-2 px-6 rounded-md hover:bg-darker-mint-green transition-colors duration-300 w-full sm:w-auto">
           Start Exploring
-        </button>
+        </button> */}
       </div>
     </section>
   )
