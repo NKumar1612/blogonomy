@@ -34,7 +34,7 @@ export const Header = () => {
 
   return (
     <header className='flex justify-between items-center lg:px-6 lg:py-4 sm:px-12 sm:py-10 bg-soft-white'>
-      <Link to="/" className='logo text-2xl font-light text-chery-red'>BLOGONOMY</Link>
+      <Link to="/" className='logo lg:text-lg sm:text-3xl font-light text-chery-red'>BLOGONOMY</Link>
       <nav className='flex space-x-4 sm:text-3xl lg:text-lg'>
         {username ? (
           <>
