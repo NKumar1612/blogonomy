@@ -18,7 +18,6 @@ export const IndexPage = () => {
       <HeroPage />
 
       <section className="bg-light-lavender lg:py-16 sm:py-32">
-        <div className="container mx-auto sm:px-6 lg:px-8"> {/* Removed px-4 */}
           <h1 className="lg:text-4xl sm:text-5xl font-playfair text-deep-burgundy text-center mb-12">
             Trending Blogs right now:
           </h1>
@@ -29,7 +28,6 @@ export const IndexPage = () => {
                 <Post key={post._id} {...post} />
               ))}
           </div>
-        </div>
       </section>
     </div>
   );
