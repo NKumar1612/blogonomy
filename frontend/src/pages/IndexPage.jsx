@@ -17,7 +17,7 @@ export const IndexPage = () => {
     <div>
       <HeroPage />
 
-      <section className="bg-light-lavender lg:py-16 sm:py-32">
+      <section className="bg-light-lavender lg:w-screen lg:h-screen sm:min-h-screen">
           <h1 className="lg:text-4xl sm:text-5xl font-playfair text-deep-burgundy text-center mb-12">
             Trending Blogs right now:
           </h1>
