@@ -33,7 +33,7 @@ export const Header = () => {
   const username = userInfo?.username;
 
   return (
-    <header className='flex justify-between items-center px-6 py-4 bg-soft-white'>
+    <header className='flex justify-between items-center lg:px-6 lg:py-4 sm:px-12 sm:py-10 bg-soft-white'>
       <Link to="/" className='logo text-2xl font-light text-chery-red'>BLOGONOMY</Link>
       <nav className='flex space-x-4 sm:text-3xl lg:text-lg'>
         {username ? (
