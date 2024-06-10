@@ -19,7 +19,7 @@ export const IndexPage = () => {
 
       <section className="bg-light-lavender py-16 md:py-32">
         <div className="container mx-auto sm:px-6 lg:px-8"> {/* Removed px-4 */}
-          <h1 className="text-4xl md:text-5xl font-playfair text-deep-burgundy text-center mb-12 shadow-sm">
+          <h1 className="lg:text-4xl sm:text-5xl font-playfair text-deep-burgundy text-center mb-12">
             Trending Blogs right now:
           </h1>
 
