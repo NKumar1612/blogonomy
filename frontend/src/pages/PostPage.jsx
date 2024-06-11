@@ -27,7 +27,7 @@ export const PostPage = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-8">
             {/* Title (Reduced size, adjusted margins) */}
-            <h1 className="text-5xl sm:text-6xl mb-4 font-playfair italic leading-tight text-deep-burgundy">
+            <h1 className="lg:text-5xl sm:text-6xl mb-4 font-playfair italic leading-tight text-deep-burgundy">
                 {postInfo.title}
             </h1>
 
@@ -59,7 +59,7 @@ export const PostPage = () => {
 
             {/* Content (Ensured text color is deep-burgundy) */}
             <div
-                className="prose max-w-none text-base sm:text-4xl text-deep-burgundy" 
+                className="prose max-w-none lg:text-base sm:text-4xl text-deep-burgundy" 
                 dangerouslySetInnerHTML={{ __html: postInfo.content }}
             />
         </div>
