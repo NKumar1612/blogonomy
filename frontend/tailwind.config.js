@@ -35,13 +35,13 @@ export default {
       'barlow': ['Barlow Condensed','sans-serif']
     },
     keyframes: {
-        seamlessScroll: { // Renamed keyframe
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(calc(-100% / 3))' }, // Move only 1/3 to the left
+        seamlessScroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% / 3))" },
         },
       },
       animation: {
-        'seamless-scroll': 'seamlessScroll 20s linear infinite', // Updated animation name
+        "seamless-scroll": "seamlessScroll 20s linear infinite", 
       },
     },
 
