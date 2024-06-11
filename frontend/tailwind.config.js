@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -30,27 +30,26 @@ export default {
     extend: {
 
       fontFamily: {
-      'lato': ['Lato', 'sans-serif'],
-      'playfair': ['Playfair Display', 'serif'],
-      'barlow': ['Barlow Condensed','sans-serif']
-    },
-    keyframes: {
-        seamlessScroll: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-100%)" },
+        'lato': ['Lato', 'sans-serif'],
+        'playfair': ['Playfair Display', 'serif'],
+        'barlow': ['Barlow Condensed','sans-serif']
+      },
+      keyframes: {
+        smoothScroll: { // Renamed keyframe
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }, // Move only 100% to the left
         },
       },
       animation: {
-        "seamless-scroll": "seamlessScroll 20s linear infinite", 
+        'smooth-scroll': 'smoothScroll 20s linear infinite', // Updated animation name
       },
     },
 
-    },
-    
+  },
+  
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-animate')
     
   ],
 }
-
