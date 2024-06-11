@@ -59,7 +59,7 @@ export const PostPage = () => {
 
             {/* Content (Ensured text color is deep-burgundy) */}
             <div
-                className="prose max-w-none text-lg sm:text-xl text-deep-burgundy" 
+                className="prose max-w-none lg:text-base sm:text-xl text-deep-burgundy" 
                 dangerouslySetInnerHTML={{ __html: postInfo.content }}
             />
         </div>
