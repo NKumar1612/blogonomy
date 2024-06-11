@@ -5,10 +5,10 @@ HeroPage = () => {
   return (
     <section className="relative w-screen h-screen sm:min-h-screen bg-gradient-to-r from-pale-pink to-light-lavender text-chery-red flex flex-col items-center justify-center overflow-hidden">
       {/* Scrolling background images (optimized) */}
-      <div className="absolute inset-0 flex animation-seamless-scroll">
+      <div className="absolute inset-0 flex animation-seamless-scroll"> {/* Changed class name */}
         <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1556761175-4b46a572b786')]"></div>
         <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1518837695005-2083093ee35b')]"></div>
-        <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68')]"></div> 
+        <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68')]"></div>
       </div>
 
       {/* Content */}
@@ -27,6 +27,7 @@ HeroPage = () => {
         </button>
       </div>
     </section>
+
 
 
       )
