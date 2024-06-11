@@ -13,10 +13,10 @@ HeroPage = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col max-w-md mx-auto py-8 sm:py-20 text-center bg-gradient-to-r from-pale-pink to-light-lavender bg-opacity-75 rounded-md px-4 sm:px-6 md:px-10">
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold font-playfair leading-tight mb-2 text-deep-burgundy">
+        <h1 className="text-2xl sm:text-5xl lg:text-7xl font-bold font-playfair leading-tight mb-2 text-deep-burgundy">
           WELCOME TO
         </h1>
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-light mb-4 sm:mb-6 md:mb-8 leading-tight text-deep-burgundy">
+        <h1 className="text-2xl sm:text-5xl lg:text-7xl font-light mb-4 sm:mb-6 md:mb-8 leading-tight text-deep-burgundy">
           BLOGONOMY
         </h1>
         <p className="text-xs sm:text-lg lg:text-xl font-lato text-neutral-gray mb-4 sm:mb-8">
@@ -27,5 +27,7 @@ HeroPage = () => {
         </button>
       </div>
     </section>
+
+
       )
 }
