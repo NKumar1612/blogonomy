@@ -27,7 +27,7 @@ export const PostPage = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-8">
             {/* Title (Reduced size, adjusted margins) */}
-            <h1 className="lg:text-5xl sm:text-6xl mb-4 font-playfair italic leading-tight text-deep-burgundy">
+            <h1 className="lg:text-5xl sm:text-9xl mb-4 font-playfair italic leading-tight text-deep-burgundy">
                 {postInfo.title}
             </h1>
 
