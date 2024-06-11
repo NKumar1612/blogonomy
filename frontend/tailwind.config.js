@@ -34,14 +34,14 @@ export default {
       'playfair': ['Playfair Display', 'serif'],
       'barlow': ['Barlow Condensed','sans-serif']
     },
-      keyframes: {
-        scroll: {
+    keyframes: {
+        smoothScroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
       },
       animation: {
-        scroll: 'scroll 30s linear infinite',
+        'smooth-scroll': 'smoothScroll 20s linear infinite',
       },
     },
 
