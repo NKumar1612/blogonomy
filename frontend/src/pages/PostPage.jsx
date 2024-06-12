@@ -38,7 +38,7 @@ export const PostPage = () => {
             <img
                 src={`https://blogonomy.onrender.com/${postInfo.cover}`}
                 alt={postInfo.title}
-                className="mb-6 rounded-lg shadow-md max-w-full"
+                className="lg:mb-6 rounded-lg shadow-md max-w-full"
             />
 
             {/* Metadata (Improved font size and spacing) */}
