@@ -21,7 +21,7 @@ export const IndexPage = () => {
           Trending Blogs right now:
         </h1>
 
-        <div className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 h-60 sm:h-72 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {posts.length > 0 && posts.map((post) => (
             <Post key={post._id} {...post} />
           ))}
