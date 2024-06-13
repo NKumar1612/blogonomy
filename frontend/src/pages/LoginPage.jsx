@@ -40,7 +40,7 @@ export const LoginPage = () => {
         onSubmit={login}
         className="bg-soft-white p-12 sm:p-16 rounded-lg shadow-xl w-full max-w-lg space-y-8"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-deep-burgundy mb-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-deep-burgundy mb-9 text-center">
           Login Form
         </h1>
 
