@@ -31,7 +31,7 @@ export const PostPage = () => {
                 {postInfo.title}
             </h1>
 
-            <SocialsShare url={url} />
+            <SocialsShare url={url} className='sm:size-16'/>
 
             <img
                 src={`https://blogonomy.onrender.com/${postInfo.cover}`}
