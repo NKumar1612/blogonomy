@@ -35,17 +35,17 @@ export const LoginPage = () => {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-4">
+    <main className="flex flex-col items-center justify-center min-h-screen p-6">
       <form
         onSubmit={login}
-        className="bg-soft-white p-10 sm:p-12 rounded-md shadow-lg w-full max-w-md space-y-6"
+        className="bg-soft-white p-12 sm:p-16 rounded-md shadow-lg w-full max-w-lg space-y-8"
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-deep-burgundy mb-4 text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-deep-burgundy mb-6 text-center">
           Login Form
         </h1>
-    
+
         <div className="flex flex-col w-full">
-          <label htmlFor="username" className="text-base text-neutral-gray mb-2">
+          <label htmlFor="username" className="text-lg sm:text-xl text-neutral-gray mb-2">
             Username
           </label>
           <input
@@ -54,12 +54,12 @@ export const LoginPage = () => {
             placeholder="Username"
             value={username}
             onChange={(ev) => setUsername(ev.target.value)}
-            className="bg-soft-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+            className="bg-soft-white p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
           />
         </div>
-    
+
         <div className="flex flex-col w-full">
-          <label htmlFor="password" className="text-base text-neutral-gray mb-2">
+          <label htmlFor="password" className="text-lg sm:text-xl text-neutral-gray mb-2">
             Password
           </label>
           <input
@@ -68,26 +68,26 @@ export const LoginPage = () => {
             placeholder="Password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
-            className="bg-soft-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+            className="bg-soft-white p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
           />
         </div>
-    
+
         {errorMessage && (
-          <div className="text-red-500 text-center mt-2">
+          <div className="text-red-500 text-center mt-4">
             <p>{errorMessage}</p>
           </div>
         )}
-    
+
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-coral text-soft-white py-2 px-8 rounded-md hover:bg-coral-light transition-colors duration-300 text-base w-full"
+            className="bg-coral text-soft-white py-3 px-10 rounded-md hover:bg-coral-light transition-colors duration-300 text-lg w-full"
           >
             Login
           </button>
         </div>
       </form>
     </main>
-  
+
   );
 };
