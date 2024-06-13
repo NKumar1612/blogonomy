@@ -22,7 +22,7 @@ export const RegisterPage = () => {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen gap-y-6 p-4">
+    <main className="flex flex-col items-center justify-center min-h-screen  w-screen gap-y-6 p-4">
       <form
         onSubmit={register}
         className="bg-soft-white p-10 md:p-12 rounded-md shadow-lg w-full sm:w-96 min-h-screen space-y-6"
