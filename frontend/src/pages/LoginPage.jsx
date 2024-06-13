@@ -35,15 +35,15 @@ export const LoginPage = () => {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center h-96  w-96 gap-y-6 p-4">
+    <main className="flex flex-col items-center justify-center min-h-screen p-4">
       <form
         onSubmit={login}
-        className="bg-soft-white p-10 sm:p-12 rounded-md shadow-lg h-full w-full sm:w-full space-y-6" 
+        className="bg-soft-white p-10 sm:p-12 rounded-md shadow-lg w-full max-w-md space-y-6"
       >
         <h1 className="text-3xl md:text-4xl font-bold text-deep-burgundy mb-4 text-center">
           Login Form
         </h1>
-
+    
         <div className="flex flex-col w-full">
           <label htmlFor="username" className="text-base text-neutral-gray mb-2">
             Username
@@ -57,7 +57,7 @@ export const LoginPage = () => {
             className="bg-soft-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
           />
         </div>
-
+    
         <div className="flex flex-col w-full">
           <label htmlFor="password" className="text-base text-neutral-gray mb-2">
             Password
@@ -71,13 +71,13 @@ export const LoginPage = () => {
             className="bg-soft-white p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
           />
         </div>
-
+    
         {errorMessage && (
           <div className="text-red-500 text-center mt-2">
             <p>{errorMessage}</p>
           </div>
         )}
-
+    
         <div className="flex justify-center">
           <button
             type="submit"
@@ -88,5 +88,6 @@ export const LoginPage = () => {
         </div>
       </form>
     </main>
+  
   );
 };
