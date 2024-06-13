@@ -25,7 +25,7 @@ export const RegisterPage = () => {
     <main className="flex flex-col items-center justify-center h-96  w-96 gap-y-6 p-4">
       <form
         onSubmit={register}
-        className="bg-soft-white p-10 sm:p-12 rounded-md shadow-lg w-full sm:w-96 h-full space-y-6"
+        className="bg-soft-white p-10 sm:p-12 rounded-md shadow-lg w-full sm:w-full h-full space-y-6"
       >
         <h1 className="text-3xl md:text-4xl font-bold text-deep-burgundy mb-4 text-center">
           Registration Form
