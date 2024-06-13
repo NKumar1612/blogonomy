@@ -38,14 +38,14 @@ export const LoginPage = () => {
     <main className="flex flex-col items-center justify-center min-h-screen p-6">
       <form
         onSubmit={login}
-        className="bg-soft-white p-12 sm:p-16 rounded-md shadow-lg w-full max-w-lg space-y-8"
+        className="bg-soft-white p-12 sm:p-16 rounded-lg shadow-xl w-full max-w-lg space-y-8"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-deep-burgundy mb-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-deep-burgundy mb-6 text-center">
           Login Form
         </h1>
 
         <div className="flex flex-col w-full">
-          <label htmlFor="username" className="text-lg sm:text-xl text-neutral-gray mb-2">
+          <label htmlFor="username" className="text-base md:text-lg text-neutral-gray mb-3">
             Username
           </label>
           <input
@@ -54,12 +54,12 @@ export const LoginPage = () => {
             placeholder="Username"
             value={username}
             onChange={(ev) => setUsername(ev.target.value)}
-            className="bg-soft-white p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+            className="bg-soft-white p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
           />
         </div>
 
         <div className="flex flex-col w-full">
-          <label htmlFor="password" className="text-lg sm:text-xl text-neutral-gray mb-2">
+          <label htmlFor="password" className="text-base md:text-lg text-neutral-gray mb-3">
             Password
           </label>
           <input
@@ -68,7 +68,7 @@ export const LoginPage = () => {
             placeholder="Password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
-            className="bg-soft-white p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
+            className="bg-soft-white p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent"
           />
         </div>
 
@@ -81,13 +81,14 @@ export const LoginPage = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-coral text-soft-white py-3 px-10 rounded-md hover:bg-coral-light transition-colors duration-300 text-lg w-full"
+            className="bg-coral text-soft-white py-3 px-10 rounded-lg hover:bg-coral-light transition-colors duration-300 text-base w-full"
           >
             Login
           </button>
         </div>
       </form>
     </main>
+
 
   );
 };
