@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect, React } from 'react';
 
 export const 
 HeroPage = () => {
