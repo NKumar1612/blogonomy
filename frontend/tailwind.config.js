@@ -35,13 +35,13 @@ module.exports = {
         'barlow': ['Barlow Condensed','sans-serif']
       },
       keyframes: {
-        smoothScroll: { // Renamed keyframe
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' }, // Move only 100% to the left
-        },
+        fadeInAndOut: {
+          '0%, 100%': { opacity: 0 }, // Start and end fully transparent
+          '50%': { opacity: 1 }, // Middle fully opaque
+        }
       },
       animation: {
-        'smooth-scroll': 'smoothScroll 20s linear infinite', // Updated animation name
+        'fade-in-out': 'fadeInAndOut 10s ease-in-out infinite', // Define the animation
       },
     },
 
