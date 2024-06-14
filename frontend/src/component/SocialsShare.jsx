@@ -30,7 +30,7 @@ export const SocialsShare = ({ url }) => {
 
     return (
         <div className='flex space-x-3 items-center py-2 relative'> 
-            <div className='absolute lg:top-[-7px] sm:top-[-10px] lg:left-[13rem] sm:left-[20.25rem] flex items-center'> 
+            <div className='absolute lg:top-[-7px] sm:top-[-10px] lg:left-[13.5rem] sm:left-[20.125rem] flex items-center'> 
                 {copied && (
                 <div className='text-deep-teal lg:text-xs sm:text-base'>Copied!</div>
                 )}
