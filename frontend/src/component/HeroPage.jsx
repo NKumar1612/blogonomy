@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from 'react'
+import { useState } from 'react';
 
-const HeroPage = () => {
+export const 
+HeroPage = () => {
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     "https://images.unsplash.com/photo-1556761175-4b46a572b786",
     "https://images.unsplash.com/photo-1518837695005-2083093ee35b",
     "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
   ];
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
