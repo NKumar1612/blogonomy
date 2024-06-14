@@ -37,16 +37,16 @@ export const SocialsShare = ({ url }) => {
             </div>
             
             <TwitterShareButton url={url}>
-                <TwitterIcon className='size-8 sm:size-16' round={true} />
+                <TwitterIcon className='lg:size-8 sm:size-16' round={true} />
             </TwitterShareButton>
             <FacebookShareButton url={url}>
-                <FacebookIcon className='size-8 sm:size-16' round={true}/>
+                <FacebookIcon className='lg:size-8 sm:size-16' round={true}/>
             </FacebookShareButton>
             <RedditShareButton url={url}>
-                <RedditIcon className='size-8 sm:size-16' round={true} />
+                <RedditIcon className='lg:size-8 sm:size-16' round={true} />
             </RedditShareButton>
             <WhatsappShareButton url={url}>
-                <WhatsappIcon className='size-8 sm:size-16' round={true}/>
+                <WhatsappIcon className='lg:size-8sm:size-16' round={true}/>
             </WhatsappShareButton>
             <button onClick={copyToClipboard}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
