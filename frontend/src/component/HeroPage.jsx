@@ -4,8 +4,9 @@ export const
 HeroPage = () => {
   return (
     <section className="relative w-screen h-screen sm:min-h-screen bg-gradient-to-r from-pale-pink to-light-lavender text-chery-red flex flex-col items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 flex animate-seamless-scroll">
-        <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1556761175-4b46a572b786')] animate-fade-in-out"></div>
+      {/* Scrolling background images (optimized) */}
+      <div className="absolute inset-0 flex animate-seamless-scroll"> 
+        <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1556761175-4b46a572b786')] animate-fade-in-out"></div> {/* Apply animation to the first image */}
         <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1518837695005-2083093ee35b')] animate-fade-in-out animation-delay-5s"></div>
         <div className="flex-shrink-0 w-full h-full bg-cover bg-[url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68')] animate-fade-in-out animation-delay-10s"></div>
       </div>
