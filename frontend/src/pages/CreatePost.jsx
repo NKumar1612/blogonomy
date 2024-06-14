@@ -37,11 +37,12 @@ export const CreatePost = () => {
   }
 
   return (
-
+  
     <form 
-      onSubmit={createNewPost} 
-      className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-soft-white rounded-lg shadow-md space-y-6" // Added top padding (py) and replaced md with sm
+    onSubmit = {createNewPost} 
+    className = 'flex flex-col px-3 space-y-4 py-5 mt-12 sm:mt-20'
     >
+
       <h1 className="text-3xl sm:text-4xl font-playfair font-bold text-center text-deep-burgundy mb-4">
         Create New Post
       </h1>
