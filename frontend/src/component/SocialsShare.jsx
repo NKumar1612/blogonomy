@@ -37,7 +37,7 @@ export const SocialsShare = ({ url }) => {
             </div>
             
             <TwitterShareButton url={url}>
-                <TwitterIcon className=' size-16' round={true} />
+                <TwitterIcon className='size-8 sm:size-16' round={true} />
             </TwitterShareButton>
             <FacebookShareButton url={url}>
                 <FacebookIcon size={32} round={true}/>
