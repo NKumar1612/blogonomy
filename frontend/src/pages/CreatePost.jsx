@@ -39,62 +39,61 @@ export const CreatePost = () => {
   return (
 
     <form 
-    onSubmit={createNewPost} 
-    className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8 bg-soft-white rounded-lg shadow-md space-y-6"
-  >
-    <h1 className="text-3xl md:text-4xl font-playfair font-bold text-center text-deep-burgundy mb-4">
-      Create New Post
-    </h1>
-  
-    <div className="flex flex-col">
-      <label htmlFor="title" className="text-base font-lato text-neutral-gray mb-2">Title</label>
-      <input 
-        type="text" 
-        id="title" 
-        placeholder="Enter your captivating title"
-        value={title}
-        onChange={(ev) => setTitle(ev.target.value)}
-        className="border rounded-md p-3 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral"
-      />
-    </div>
-  
-    <div className="flex flex-col">
-      <label htmlFor="summary" className="text-base font-lato text-neutral-gray mb-2">Summary</label>
-      <textarea 
-        id="summary" 
-        placeholder="Write a brief summary of your post"
-        value={summary}
-        onChange={(ev) => setSummary(ev.target.value)}
-        className="border rounded-md p-3 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral h-24 resize-y"
-      />
-    </div>
-  
-    <div className="flex flex-col">
-      <label htmlFor="file" className="text-base font-lato text-neutral-gray mb-2">Cover Image</label>
-      <input 
-        type="file" 
-        id="file"
-        onChange={(ev) => setFiles(ev.target.files)}
-        className="border rounded-md p-2 bg-soft-white file:bg-dark-olive-green file:text-soft-white file:rounded-md file:border-0 file:px-4 file:py-2 file:cursor-pointer hover:file:bg-darker-mint-green" 
-      />
-    </div>
-  
-    <div className="flex flex-col">  {/* Container for Editor with Label */}
-      <label htmlFor="content" className="text-base font-lato text-neutral-gray mb-2">Content</label>
-      <Editor 
-        id="content"
-        value={content} 
-        onChange={setContent}
-        className="border rounded-md p-4 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral min-h-[300px]" // Added styles for Editor
-      />
-    </div>
-  
-    <button 
-      className="bg-darker-mint-green hover:bg-muted-mint-green text-soft-white font-barlow py-3 px-6 rounded-md text-base mt-4"
+      onSubmit={createNewPost} 
+      className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-soft-white rounded-lg shadow-md space-y-6" // Added top padding (py) and replaced md with sm
     >
-      Create Post
-    </button>
-  </form>
+      <h1 className="text-3xl sm:text-4xl font-playfair font-bold text-center text-deep-burgundy mb-4">
+        Create New Post
+      </h1>
+    
+      <div className="flex flex-col">
+        <label htmlFor="title" className="text-base font-lato text-neutral-gray mb-2">Title</label>
+        <input 
+          type="text" 
+          id="title" 
+          placeholder="Enter your captivating title"
+          value={title}
+          onChange={(ev) => setTitle(ev.target.value)}
+          className="border rounded-md p-3 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label htmlFor="summary" className="text-base font-lato text-neutral-gray mb-2">Summary</label>
+        <textarea 
+          id="summary" 
+          placeholder="Write a brief summary of your post"
+          value={summary}
+          onChange={(ev) => setSummary(ev.target.value)}
+          className="border rounded-md p-3 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral h-24 resize-y"
+        />
+      </div>
+    
+      <div className="flex flex-col">
+        <label htmlFor="file" className="text-base font-lato text-neutral-gray mb-2">Cover Image</label>
+        <input 
+          type="file" 
+          id="file"
+          onChange={(ev) => setFiles(ev.target.files)}
+          className="border rounded-md p-2 bg-soft-white file:bg-dark-olive-green file:text-soft-white file:rounded-md file:border-0 file:px-4 file:py-2 file:cursor-pointer hover:file:bg-darker-mint-green" 
+        />
+      </div>
+    
+      <div className="flex flex-col">  {/* Container for Editor with Label */}
+        <label htmlFor="content" className="text-base font-lato text-neutral-gray mb-2">Content</label>
+        <Editor 
+          id="content"
+          value={content} 
+          onChange={setContent}
+          className="border rounded-md p-4 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral min-h-[300px]" // Added styles for Editor
+        />
+      </div>
+    
+      <button 
+        className="bg-darker-mint-green hover:bg-muted-mint-green text-soft-white font-barlow py-3 px-6 rounded-md text-base mt-4"
+      >
+        Create Post
+      </button>
+    </form>
 
   );
 };
