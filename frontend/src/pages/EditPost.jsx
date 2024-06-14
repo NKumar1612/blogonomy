@@ -51,7 +51,7 @@ export const EditPost = () => {
 
       <form 
       onSubmit={updatePost} 
-      className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-soft-white rounded-lg shadow-md space-y-6 mb-12 sm:mb-16"> 
+      className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-4 sm:py-8 lg:py-12 bg-soft-white rounded-lg shadow-md space-y-6 mt-12 sm:mt-16"> 
 
       <h1 className="text-3xl sm:text-4xl font-playfair font-bold text-center text-deep-burgundy mb-4">
         Update Post
@@ -89,8 +89,7 @@ export const EditPost = () => {
           className="border rounded-md p-2 bg-soft-white file:bg-dark-olive-green file:text-soft-white file:rounded-md file:border-0 file:px-4 file:py-2 file:cursor-pointer hover:file:bg-darker-mint-green" 
         />
       </div>
-    
-      {/* Editor */}
+
       <div className="flex flex-col">
         <label htmlFor="content" className="text-base font-lato text-neutral-gray mb-2">Content</label>
         <Editor
@@ -100,8 +99,7 @@ export const EditPost = () => {
           className="border rounded-md p-4 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral min-h-[300px]"
         />
       </div>
-    
-      {/* Button */}
+
       <button 
         className="bg-darker-mint-green hover:bg-muted-mint-green text-soft-white font-barlow py-3 px-6 rounded-md text-base mt-4 w-full md:w-auto"
       >
