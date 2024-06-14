@@ -38,7 +38,7 @@ export const CreatePost = () => {
 
   return (
 
-    <form onSubmit={createNewPost} className='flex flex-col px-3 space-y-12'>
+    <form onSubmit={createNewPost} className='flex flex-col px-3 space-y-4 py-5'>
       <input
         type='title'
         placeholder={'Title'}
