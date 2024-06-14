@@ -21,9 +21,6 @@ HeroPage = () => {
         <p className="text-xs sm:text-base lg:text-lg font-lato text-neutral-gray mb-4 sm:mb-6 md:mb-8">
           Your curated collection of elegant and minimalist blogs. Discover inspiring stories and insightful perspectives.
         </p>
-        <button className="bg-dark-olive-green text-soft-white font-barlow py-2 px-6 rounded-md hover:bg-darker-mint-green transition-colors duration-300 w-full sm:w-auto">
-          Start Exploring
-        </button>
       </div>
     </section>
 
