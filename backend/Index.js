@@ -102,8 +102,9 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
     const newPath = path + '.' + ext;
     fs.renameSync(path, newPath);
 
-    const { token } = req.cookies;
+    console.log('Cookies:', req.cookies);
 
+    const { token } = req.cookies;
     if (!token) {
         console.error('No token provided');
         return res.status(401).json({ error: 'Unauthorized: No token provided' });
@@ -131,6 +132,7 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
         }
     });
 });
+
 
 
 app.put('/post', uploadMiddleware.single('file'), async (req, res) => {

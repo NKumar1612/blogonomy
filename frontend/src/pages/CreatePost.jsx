@@ -27,6 +27,8 @@ export const CreatePost = () => {
       credentials: 'include', // Ensure cookies are sent
     });
 
+    console.log('Response:', response);
+
     if (response.ok) {
       setRedirect(true);
     } else {
