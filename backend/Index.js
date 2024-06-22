@@ -103,11 +103,18 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
     fs.renameSync(path, newPath);
 
     const { token } = req.cookies;
+
+    if (!token) {
+        console.error('No token provided');
+        return res.status(401).json({ error: 'Unauthorized: No token provided' });
+    }
+
     jwt.verify(token, secret, {}, async (err, info) => {
         if (err) {
             console.error('JWT verification failed:', err);
             return res.status(401).json({ error: 'Unauthorized: Invalid token' });
         }
+
         const { title, summary, content } = req.body;
         try {
             const postDoc = await Post.create({
@@ -124,6 +131,7 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
         }
     });
 });
+
 
 app.put('/post', uploadMiddleware.single('file'), async (req, res) => {
     let newPath = null;

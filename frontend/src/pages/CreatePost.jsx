@@ -8,46 +8,29 @@ export const CreatePost = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
-  const [error, setError] = useState('');
 
   const handleTitleChange = (event) => setTitle(event.target.value);
   const handleSummaryChange = (event) => setSummary(event.target.value);
   const handleContentChange = (value) => setContent(value);
 
-  const validateInputs = () => {
-    if (!title || !summary || !content || !files) {
-      setError('All fields are required.');
-      return false;
-    }
-    setError('');
-    return true;
-  };
-
   async function createNewPost(ev) {
     ev.preventDefault();
-    
-    if (!validateInputs()) return;
-
     const data = new FormData();
     data.set('title', title);
     data.set('summary', summary);
     data.set('content', content);
     data.set('file', files[0]);
 
-    try {
-      const response = await fetch('https://blogonomy.onrender.com/post', {
-        method: 'POST',
-        body: data,
-        credentials: 'include'
-      });
-      if (response.ok) {
-        setRedirect(true);
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message || 'Failed to create post');
-      }
-    } catch (error) {
-      setError('An error occurred while creating the post.');
+    const response = await fetch('https://blogonomy.onrender.com/post', {
+      method: 'POST',
+      body: data,
+      credentials: 'include', // Ensure cookies are sent
+    });
+
+    if (response.ok) {
+      setRedirect(true);
+    } else {
+      console.error('Failed to create post:', response.status, response.statusText);
     }
   }
 
@@ -64,28 +47,21 @@ export const CreatePost = () => {
         Create New Post
       </h1>
 
-      {error && (
-        <div className="text-red-500 text-center mb-4">
-          {error}
-        </div>
-      )}
-
       <div className="flex flex-col">
         <label htmlFor="title" className="text-base font-lato text-neutral-gray mb-2">Title</label>
-        <input 
-          type="text" 
-          id="title" 
+        <input
+          type="text"
+          id="title"
           placeholder="Enter your captivating title"
           value={title}
           onChange={handleTitleChange}
           className="border rounded-md p-3 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral"
         />
       </div>
-      
       <div className="flex flex-col">
         <label htmlFor="summary" className="text-base font-lato text-neutral-gray mb-2">Summary</label>
-        <textarea 
-          id="summary" 
+        <textarea
+          id="summary"
           placeholder="Write a brief summary of your post"
           value={summary}
           onChange={handleSummaryChange}
@@ -95,25 +71,25 @@ export const CreatePost = () => {
 
       <div className="flex flex-col">
         <label htmlFor="file" className="text-base font-lato text-neutral-gray mb-2">Cover Image</label>
-        <input 
-          type="file" 
+        <input
+          type="file"
           id="file"
           onChange={(ev) => setFiles(ev.target.files)}
-          className="border rounded-md p-2 bg-soft-white file:bg-dark-olive-green file:text-soft-white file:rounded-md file:border-0 file:px-4 file:py-2 file:cursor-pointer hover:file:bg-darker-mint-green" 
+          className="border rounded-md p-2 bg-soft-white file:bg-dark-olive-green file:text-soft-white file:rounded-md file:border-0 file:px-4 file:py-2 file:cursor-pointer hover:file:bg-darker-mint-green"
         />
       </div>
 
       <div className="flex flex-col">
         <label htmlFor="content" className="text-base font-lato text-neutral-gray mb-2">Content</label>
-        <Editor 
+        <Editor
           id="content"
-          value={content} 
+          value={content}
           onChange={handleContentChange}
           className="border rounded-md p-4 bg-soft-white focus:outline-none focus:ring-2 focus:ring-coral min-h-[300px]"
         />
       </div>
 
-      <button 
+      <button
         className="bg-darker-mint-green hover:bg-muted-mint-green text-soft-white font-barlow py-3 px-6 rounded-md text-base mt-4"
       >
         Create Post
