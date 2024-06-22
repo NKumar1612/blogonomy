@@ -16,7 +16,6 @@ const secret = 'jsgakjsdahs';
 
 const app = express();
 
-// Updated CORS Configuration
 app.use(cors({
     credentials: true,
     origin: [
@@ -30,17 +29,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
+mongoose.connect('mongodb+srv://nkumar07nk:JKFJAxY20ydJpyoV@blogonomy.qhscmkr.mongodb.net/?retryWrites=true&w=majority&appName=Blogonomy', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
     try {
-        const userDoc = await User.create({ 
-            username, 
-            password: bcrypt.hashSync(password, salt) 
+        const userDoc = await User.create({
+            username,
+            password: bcrypt.hashSync(password, salt)
         });
         res.json(userDoc);
     } catch (e) {
@@ -101,39 +100,37 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
     const ext = parts[parts.length - 1];
     const newPath = path + '.' + ext;
     fs.renameSync(path, newPath);
-
+  
     console.log('Cookies:', req.cookies);
-
+  
     const { token } = req.cookies;
     if (!token) {
-        console.error('No token provided');
-        return res.status(401).json({ error: 'Unauthorized: No token provided' });
+      console.error('No token provided');
+      return res.status(401).json({ error: 'Unauthorized: No token provided' });
     }
-
+  
     jwt.verify(token, secret, {}, async (err, info) => {
-        if (err) {
-            console.error('JWT verification failed:', err);
-            return res.status(401).json({ error: 'Unauthorized: Invalid token' });
-        }
-
-        const { title, summary, content } = req.body;
-        try {
-            const postDoc = await Post.create({
-                title,
-                summary,
-                content,
-                cover: newPath,
-                author: info.id,
-            });
-            res.json(postDoc);
-        } catch (err) {
-            console.error('Error creating post:', err);
-            res.status(500).json({ error: 'Error creating post' });
-        }
+      if (err) {
+        console.error('JWT verification failed:', err);
+        return res.status(401).json({ error: 'Unauthorized: Invalid token' });
+      }
+  
+      const { title, summary, content } = req.body;
+      try {
+        const postDoc = await Post.create({
+          title,
+          summary,
+          content,
+          cover: newPath,
+          author: info.id,
+        });
+        res.json(postDoc);
+      } catch (err) {
+        console.error('Error creating post:', err);
+        res.status(500).json({ error: 'Error creating post' });
+      }
     });
-});
-
-
+  });
 
 app.put('/post', uploadMiddleware.single('file'), async (req, res) => {
     let newPath = null;

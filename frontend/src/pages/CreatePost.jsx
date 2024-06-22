@@ -3,6 +3,7 @@ import { Editor } from '../component/Editor';
 import { Navigate } from 'react-router-dom';
 
 export const CreatePost = () => {
+  
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
