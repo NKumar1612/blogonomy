@@ -16,15 +16,21 @@ const secret = 'jsgakjsdahs';
 
 const app = express();
 
-// Updated CORS Configuration
+// CORS Configuration
 app.use(cors({
+    origin: (origin, callback) => {
+        const allowedOrigins = [
+            'https://blogonomy.social',
+            'https://blogonomy.onrender.com',
+            'https://blogonomy-1.onrender.com'
+        ];
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
-    origin: [
-        'https://blogonomy.social',
-        'https://blogonomy.onrender.com',
-        'https://blogonomy-1.onrender.com'
-
-    ],
 }));
 
 app.use(express.json());
