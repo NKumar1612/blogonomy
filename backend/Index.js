@@ -17,14 +17,7 @@ const secret = 'jsgakjsdahs';
 const app = express();
 
 // Updated CORS Configuration
-app.use(cors({
-    credentials: true,
-    origin: [
-        'https://blogonomy.social',
-        'https://blogonomy.onrender.com',
-        'https://blogonomy-1.onrender.com'
-    ],
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser());

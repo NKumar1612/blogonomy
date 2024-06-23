@@ -10,7 +10,7 @@ export const Header = () => {
 
     fetch('https://blogonomy.onrender.com/profile', {
 
-      credentials: 'include',
+      
 
     }).then(response => {
 
@@ -24,7 +24,7 @@ export const Header = () => {
   function logout() {
     
     fetch('https://blogonomy.onrender.com/logout', {
-      credentials: 'include',
+      
       method: 'POST',
     });
     setUserInfo(null);

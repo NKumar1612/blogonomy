@@ -25,7 +25,7 @@ export const CreatePost = () => {
     const response = await fetch('https://blogonomy.onrender.com/post', {
       method: 'POST',
       body: data,
-      credentials: 'include', // Ensure cookies are sent
+      
     });
 
     console.log('Response:', response);

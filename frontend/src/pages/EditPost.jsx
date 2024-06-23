@@ -36,7 +36,7 @@ export const EditPost = () => {
         const response = await fetch('https://blogonomy.onrender.com/post', {
           method: 'PUT',
           body: data,
-          credentials: 'include',
+          
         });
         if (response.ok) {
            setRedirect(true);
