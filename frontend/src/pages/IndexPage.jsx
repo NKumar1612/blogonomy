@@ -5,9 +5,11 @@ import {HeroPage} from '../component/HeroPage';
 import React from 'react'
 
 export const IndexPage = () => {
-  const [posts,setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch('https://blogonomy.onrender.com/post').then(response => {
+    fetch('https://blogonomy.onrender.com/post', {
+      credentials: 'include'
+    }).then(response => {
       response.json().then(posts => {
         setPosts(posts);
       });

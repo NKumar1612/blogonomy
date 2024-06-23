@@ -12,7 +12,9 @@ export const PostPage = () => {
     const url = window.location.href;
 
     useEffect(() => {
-        fetch(`https://blogonomy.onrender.com/post/${id.id}`)
+        fetch(`https://blogonomy.onrender.com/post/${id.id}`, {
+            credentials: 'include'
+        })
             .then(response => response.json())
             .then(postInfo => {
                 setPostInfo(postInfo);

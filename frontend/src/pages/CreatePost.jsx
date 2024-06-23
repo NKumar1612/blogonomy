@@ -25,7 +25,7 @@ export const CreatePost = () => {
     const response = await fetch('https://blogonomy.onrender.com/post', {
       method: 'POST',
       body: data,
-      
+      credentials: 'include'
     });
 
     console.log('Response:', response);

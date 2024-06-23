@@ -7,28 +7,23 @@ export const Header = () => {
   const {setUserInfo,userInfo} = useContext(UserContext);
 
   useEffect(() => {
-
     fetch('https://blogonomy.onrender.com/profile', {
-
-      
-
+      credentials: 'include'
     }).then(response => {
-
       response.json().then(userInfo => {
         setUserInfo(userInfo);
-
       });
     });
   }, []);
 
   function logout() {
-    
     fetch('https://blogonomy.onrender.com/logout', {
-      
       method: 'POST',
+      credentials: 'include'
     });
     setUserInfo(null);
   }
+
 
   const username = userInfo?.username;
 
